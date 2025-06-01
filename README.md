@@ -1,8 +1,17 @@
 # 安装  
 
-> **注意：** 记得把命令中的 `yourdomain` 改为你真实的域名
+> **注意：** 第一步，记得把命令中的 `yourdomain` 改为你真实的域名
 ```bash 
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh yourdomain
+```
+第二步
+```bash 
+cloudlinux-selector create --json --interpreter=nodejs --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html --app-uri=/ --version=22.14.0 --app-mode=Production --startup-file=index.js
+```
+第三步
+```bash 
+cd /home/gytfkfnd/domains/us.baozong.dpdns.org/public_html/home/gytfkfnd/nodevenv/domains/us.baozong.dpdns.org/public_html/22/bin/npm install
+ls /home/gytfkfnd/.npm/_logs
 ```
 
 
