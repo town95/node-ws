@@ -10,8 +10,14 @@ cloudlinux-selector create --json --interpreter=nodejs --user=gytfkfnd --app-roo
 ```
 第三步
 ```bash 
-cd /home/gytfkfnd/domains/us.baozong.dpdns.org/public_html/home/gytfkfnd/nodevenv/domains/us.baozong.dpdns.org/public_html/22/bin/npm install
+cd /home/gytfkfnd/domains/us.baozong.dpdns.org/public_html
+/home/gytfkfnd/nodevenv/domains/us.baozong.dpdns.org/public_html/22/bin/npm install
 ls /home/gytfkfnd/.npm/_logs
+rm -f /home/gytfkfnd/.npm/_logs/*.log
+```
+第四步，删除节点
+```bash 
+cloudlinux-selector create --json --interpreter=node.js --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html [EOF]
 ```
 
 
