@@ -43,7 +43,7 @@ cloudlinux-selector create \
     --app-root="$APP_ROOT_DIRECTORY" \
     --app-uri="/" \
     --version="$NODE_SELECTOR_VERSION" \
-    --app-mode="development" \
+    --app-mode="Production" \
     --startup-file="$APP_STARTUP_FILE"
 
 if [ -d "$APP_ROOT_DIRECTORY" ] && [ -f "$NPM_COMMAND_PATH" ] && [ -x "$NPM_COMMAND_PATH" ]; then
