@@ -1,14 +1,20 @@
 # 安装  
 
-> **注意：** 第一步，记得把命令中的 `yourdomain` 改为你真实的域名
+> **注意：** 第一步，记得把命令中的 `yourdomain` 改为你真实的域名 启动node.js脚本配置UUID和域名
 ```bash 
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh yourdomain
 ```
-
+第二步 ，配置node.js环境 启动npm
 ```bash 
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/whm.sh > whm.sh && chmod +x whm.sh && ./whm.sh
 ```
 
+
+
+以下为手动挡SSH安装
+```bash 
+curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh yourdomain
+```
 
 ```bash 
 cloudlinux-selector create --json --interpreter=nodejs --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html --app-uri=/ --version=22.14.0 --app-mode=Production --startup-file=index.js
