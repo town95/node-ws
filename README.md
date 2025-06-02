@@ -4,18 +4,23 @@
 ```bash 
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh yourdomain
 ```
-第二步
+
+```bash 
+curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/whm.sh > whm.sh && chmod +x whm.sh && ./whm.sh
+```
+
+
 ```bash 
 cloudlinux-selector create --json --interpreter=nodejs --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html --app-uri=/ --version=22.14.0 --app-mode=Production --startup-file=index.js
 ```
-第三步
+
 ```bash 
 cd /home/gytfkfnd/domains/us.baozong.dpdns.org/public_html
 /home/gytfkfnd/nodevenv/domains/us.baozong.dpdns.org/public_html/22/bin/npm install
 ls /home/gytfkfnd/.npm/_logs
 rm -f /home/gytfkfnd/.npm/_logs/*.log
 ```
-第四步，删除节点
+删除节点
 ```bash 
 cloudlinux-selector create --json --interpreter=node.js --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html [EOF]
 ```
