@@ -28,7 +28,7 @@ rm -f /home/gytfkfnd/.npm/_logs/*.log
 ```
 删除节点
 ```bash 
-cloudlinux-selector create --json --interpreter=node.js --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html [EOF]
+cloudlinux-selector destroy --json --interpreter=node.js --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html [EOF]
 ```
 
 
