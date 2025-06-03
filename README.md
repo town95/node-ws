@@ -9,30 +9,6 @@ curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/npm.sh > npm.sh && chmod +x npm.sh && ./npm.sh yourdomain
 ```
 
-
-
-以下为手动挡SSH安装
-```bash 
-curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh yourdomain
-```
-
-```bash 
-cloudlinux-selector create --json --interpreter=nodejs --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html --app-uri=/ --version=22.14.0 --app-mode=Production --startup-file=index.js
-```
-
-```bash 
-cd /home/gytfkfnd/domains/us.baozong.dpdns.org/public_html
-/home/gytfkfnd/nodevenv/domains/us.baozong.dpdns.org/public_html/22/bin/npm install
-ls /home/gytfkfnd/.npm/_logs
-rm -f /home/gytfkfnd/.npm/_logs/*.log
-```
-删除节点
-```bash 
-cloudlinux-selector destroy --json --interpreter=nodejs --user=gytfkfnd --app-root=/home/gytfkfnd/domains/us.baozong.dpdns.org/public_html 
-```
-
-
-
 # Node-ws说明
 用于node环境的玩具和容器，基于node三方ws库，集成哪吒探针服务，可自行添加环境变量
 * PaaS 平台设置的环境变量
@@ -50,7 +26,28 @@ cloudlinux-selector destroy --json --interpreter=nodejs --user=gytfkfnd --app-ro
 
 * 域名/sub查看节点信息，也是订阅地址，包含 https:// 或 http:// 前缀，非标端口，域名:端口/sub
 
-    
 * 温馨提示：READAME.md为说明文件，请不要上传。
 * js混肴地址：https://obfuscator.io
+* domains/usa.baozong.dpdns.org/public_html
+* index.js
+* https://us.baozong.dpdns.org/sub
 
+
+日本
+```bash 
+curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh japan.baozong.dpdns.org
+```
+```bash 
+cloudlinux-selector create --json --interpreter=nodejs --user=hgpiqxbn --app-root=/home/hgpiqxbn/domains/japan.baozong.dpdns.org/public_html --app-uri=/ --version=22.14.0 --app-mode=Production --startup-file=index.js
+```
+```bash 
+cd /home/hgpiqxbn/domains/japan.baozong.dpdns.org/public_html
+/home/hgpiqxbn/nodevenv/domains/japan.baozong.dpdns.org/public_html/22/bin/npm install
+```
+```bash 
+ls /home/hgpiqxbn/.npm/_logs
+rm -f /home/hgpiqxbn/.npm/_logs/*.log
+```
+```bash 
+cloudlinux-selector destroy --json --interpreter=nodejs --user=hgpiqxbn --app-root=/home/hgpiqxbn/domains/japan.baozong.dpdns.org/public_html 
+```
