@@ -5,11 +5,7 @@
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh japan.baozong.dpdns.org
 
 ```
-第二步 ，记得把命令中的 `yourdomain` 改为你真实的域名,配置node.js环境 启动npm
-```bash 
-curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/npm.sh > npm.sh && chmod +x npm.sh && ./npm.sh japan.baozong.dpdns.org
-
-```
+ 
 
 # Node-ws说明
 用于node环境的玩具和容器，基于node三方ws库，集成哪吒探针服务，可自行添加环境变量
