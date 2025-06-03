@@ -28,26 +28,4 @@ curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/npm.sh > npm.sh &
 
 * 温馨提示：READAME.md为说明文件，请不要上传。
 * js混肴地址：https://obfuscator.io
-* domains/usa.baozong.dpdns.org/public_html
-* index.js
-* https://us.baozong.dpdns.org/sub
 
-
-日本
-```bash 
-curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh japan.baozong.dpdns.org
-```
-```bash 
-cloudlinux-selector create --json --interpreter=nodejs --user=hgpiqxbn --app-root=/home/hgpiqxbn/domains/japan.baozong.dpdns.org/public_html --app-uri=/ --version=22.14.0 --app-mode=Production --startup-file=index.js
-```
-```bash 
-cd /home/hgpiqxbn/domains/japan.baozong.dpdns.org/public_html
-/home/hgpiqxbn/nodevenv/domains/japan.baozong.dpdns.org/public_html/22/bin/npm install
-```
-```bash 
-ls /home/hgpiqxbn/.npm/_logs
-rm -f /home/hgpiqxbn/.npm/_logs/*.log
-```
-```bash 
-cloudlinux-selector destroy --json --interpreter=nodejs --user=hgpiqxbn --app-root=/home/hgpiqxbn/domains/japan.baozong.dpdns.org/public_html 
-```
