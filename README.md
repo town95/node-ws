@@ -1,6 +1,6 @@
 # 安装  
 
-测试
+一键重建脚本
 ```bash 
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/deploy.sh > deploy.sh && chmod +x deploy.sh && ./deploy.sh  
 
