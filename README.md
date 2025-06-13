@@ -2,7 +2,7 @@
 
 测试
 ```bash 
-curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > deploy.sh && chmod +x deploy.sh && ./deploy.sh  
+curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/deploy.sh > deploy.sh && chmod +x deploy.sh && ./deploy.sh  
 
 ```
 
