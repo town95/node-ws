@@ -1,13 +1,15 @@
 #!/bin/bash
 set -e
 
-# ========== 手动输入 ==========
-read -p "请输入 CloudLinux 用户名: " USERNAME
-if [ -z "$USERNAME" ]; then
-    echo "❌ 用户名不能为空，脚本退出。"
-    exit 1
-fi
+# ========== 自动获取当前用户名 ==========
+cd ~ || { echo "❌ 无法切换到主目录"; exit 1; }
+path="$(pwd)"
+USERNAME="${path#/home/}"
+USERNAME="${USERNAME%%/*}"
 
+echo "自动检测当前用户名: $USERNAME"
+
+# ========== 手动输入域名 ==========
 read -p "请输入绑定的域名（如 us.example.com）: " DOMAIN
 if [ -z "$DOMAIN" ]; then
     echo "❌ 域名不能为空，脚本退出。"
