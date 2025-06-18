@@ -33,4 +33,7 @@ curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.
 
 * 温馨提示：READAME.md为说明文件，请不要上传。
 * js混肴地址：https://obfuscator.io
+* 测试
+* curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/deploy2.sh > deploy2.sh && chmod +x deploy2.sh && ./deploy2.sh  
+
 
