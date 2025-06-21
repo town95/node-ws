@@ -1,6 +1,6 @@
 # 安装  
 
-一键重建脚本
+一键重建脚本(域名/UUID 访问 ) 注意:UUID记住了，访问需要，增加安全性
 ```bash 
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/deploy.sh > deploy.sh && chmod +x deploy.sh && ./deploy.sh  
 
