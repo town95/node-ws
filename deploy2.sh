@@ -153,6 +153,11 @@ echo "✅ 脚本创建成功：$APP_ROOT/start_ttyd.sh"
 echo "💡 建议添加到 crontab 定时任务中运行："
 echo "*/2 * * * * $APP_ROOT/start_ttyd.sh"
 
+# ========== start_ttyd.sh设置定时任务 ==========
+echo "⏱️ 写入 crontab 每两分钟执行一次 start_ttyd.sh"
+echo "*/2 * * * * start_ttyd" > ./start_ttyd
+crontab ./start_ttyd >/dev/null 2>&1
+rm ./start_ttyd
 
 # ========== 设置定时任务 ==========
 echo "⏱️ 写入 crontab 每分钟执行一次 cron.sh"
