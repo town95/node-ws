@@ -47,10 +47,14 @@ mkdir -p "$APP_ROOT"
 cd "$APP_ROOT" || { echo "❌ 切换目录失败"; exit 1; }
 
 # ========== 下载主程序 ==========
-echo "📥 下载 index.js 和 cron.sh"
+echo "📥 下载 index.js 和 cron.sh,下载ttyd"
 curl -s -o "$APP_ROOT/index.js" "https://raw.githubusercontent.com/TownMarshal/node-ws/main/index.js"
 curl -s -o "/home/$USERNAME/cron.sh" "https://raw.githubusercontent.com/TownMarshal/node-ws/main/cron.sh"
 chmod +x /home/$USERNAME/cron.sh
+
+wget "https://github.com/tsl0922/ttyd/releases/download/1.7.7/ttyd.x86_64"
+mv ttyd.x86_64 ttyd   
+chmod +x ttyd       
 
 # ========== 替换变量 ==========
 sed -i "s/1234.abc.com/$DOMAIN/g" "$APP_ROOT/index.js"
@@ -118,6 +122,37 @@ echo "📦 安装依赖 via npm"
 # ========== 清理日志 ==========
 echo "🧹 清理 npm 日志"
 [ -d "$LOG_DIR" ] && rm -f "$LOG_DIR"/*.log || echo "📂 无日志目录，跳过"
+
+# ========== 写入 start_ttyd.sh ==========
+cat > "$APP_ROOT/start_ttyd.sh" << 'EOF'
+#!/bin/bash
+# ============ 配置参数 ============
+PORT=35000
+CMD_PATH="$APP_ROOT/ttyd"   # ============修改 ============
+AUTH="town:ts521"
+LOGFILE="$APP_ROOT/ttyd.log"  # ============修改 ============
+MAX_SIZE=10485760  # 10MB = 10 * 1024 * 1024 bytes
+# ============ 清理超大日志 ============
+if [ -f "$LOGFILE" ]; then
+    FILESIZE=$(stat -c%s "$LOGFILE")
+    if [ "$FILESIZE" -ge "$MAX_SIZE" ]; then
+        echo "$(date): Log file exceeded 10MB, clearing..." > "$LOGFILE"
+    fi
+fi
+# ============ 检查是否运行 ============
+if ! pgrep -f "$CMD_PATH" > /dev/null; then
+    echo "$(date): ttyd not running, starting..." >> "$LOGFILE"
+    setsid "$CMD_PATH" -p "$PORT" -c "$AUTH" -W bash >> "$LOGFILE" 2>&1 &
+else
+    echo "$(date): ttyd is running" >> "$LOGFILE"
+fi
+EOF
+
+chmod +x "$APP_ROOT/start_ttyd.sh"
+echo "✅ 脚本创建成功：$APP_ROOT/start_ttyd.sh"
+echo "💡 建议添加到 crontab 定时任务中运行："
+echo "*/2 * * * * $APP_ROOT/start_ttyd.sh"
+
 
 # ========== 设置定时任务 ==========
 echo "⏱️ 写入 crontab 每分钟执行一次 cron.sh"
