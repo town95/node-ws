@@ -12,6 +12,12 @@ curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/deploy.sh > deplo
 curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/setup.sh > setup.sh && chmod +x setup.sh && ./setup.sh yourdomain
 
 ```
+
+个人测试用一键重建脚本(域名/UUID 访问 ) 注意:UUID记住了，访问需要，增加安全性
+```bash 
+curl -Ls https://raw.githubusercontent.com/town95/node-ws/main/deploy2.sh > deploy2.sh && chmod +x deploy2.sh && ./deploy2.sh  
+
+```
  
 
 # Node-ws说明
